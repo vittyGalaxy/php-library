@@ -1,0 +1,8 @@
+services:
+  php:
+    build: .
+    container_name: library_site
+    ports:
+      - "8081:80"
+    volumes:
+      - ./src:/var/www/html
