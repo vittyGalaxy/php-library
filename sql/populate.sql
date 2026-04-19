@@ -1,0 +1,1 @@
+INSERT INTO Author(nameAuthor, surnameAuthor) VALUES ("Mario", "Rossi"), ("Luigi", "Verdi")
