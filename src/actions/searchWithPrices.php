@@ -1,15 +1,15 @@
 <?php
     require "../actions/connection.php";
 
-    $authorName = "";
-    $authorSurname = "";
+    $rangeMin = "";
+    $rangeMax = "";
 
     $result = null;
 
-    if (!empty($_POST["authorSurname"]) && !empty($_POST["authorName"])) {
-        $authorName = $_POST["authorName"];
-        $authorSurname = $_POST["authorSurname"];
-        $sql_book = "SELECT title, price, nameAuthor, surnameAuthor FROM Book JOIN Author ON Book.idAuthor = Author.idAuthor WHERE Author.nameAuthor LIKE '%$authorName%' AND Author.surnameAuthor LIKE '%$authorSurname%'";
+    if (!empty($_POST["min"]) && !empty($_POST["max"])) {
+        $rangeMin = $_POST["min"];
+        $rangeMax = $_POST["max"];
+        $sql_book = "SELECT title, price, nameAuthor, surnameAuthor FROM Book JOIN Author ON Book.idAuthor = Author.idAuthor WHERE ($rangeMin <= price) AND ($rangeMax >= price)";
         $result = $conn->query($sql_book);
     }
 

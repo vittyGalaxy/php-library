@@ -6,22 +6,22 @@
     <body>
         <table border="1">
             <tr>
-                <th> ID Book </th>
                 <th> Title </th>
                 <th> Price </th>
-                <th> ID Author </th>
+                <th> Author Name </th>
+                <th> Author Surname </th>
 
                 <?php
                     require "../actions/connection.php";
-                    $sql_book = "SELECT * FROM Book";
+                    $sql_book = "SELECT title, price, nameAuthor, surnameAuthor FROM Book JOIN Author ON (Book.idAuthor = Author.idAuthor)";
                     $result = $conn->query($sql_book);
 
                     while ($row = $result->fetch_assoc()){
                         echo "<tr>";
-                            echo "<td>" . $row["idBook"]    . "</td>";
-                            echo "<td>" . $row["title"]     . "</td>";
+                            echo "<td>" . $row["title"]    . "</td>";
                             echo "<td>" . $row["price"]     . "</td>";
-                            echo "<td>" . $row["idAuthor"]  . "</td>";
+                            echo "<td>" . $row["nameAuthor"]     . "</td>";
+                            echo "<td>" . $row["surnameAuthor"]  . "</td>";
                         echo "</tr>";
                     }
                 ?>
