@@ -35,9 +35,16 @@
 
         <!-- author -->
         <form action="../actions/searchWithAuthor.php" method="post">
+            <p> Author </p>
+            
             <p>
-                Author:<br>
-                <input type="text" name="author">
+                Name:<br>
+                <input type="text" name="authorName">
+            </p>
+
+            <p>
+                Surname:<br>
+                <input type="text" name="authorSurname">
             </p>
 
             <p>
