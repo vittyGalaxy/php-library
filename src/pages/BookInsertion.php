@@ -4,7 +4,7 @@
         <p><a href="../index.php"> Return to the homepage </a></p>
     </head>
     <body>
-        <form action="../actions/saveBook.php" method="post">
+        <form action="../actions/saveBooksicure.php" method="post">
             <p>
                 Title:<br>
                 <input type="text" name="title">
